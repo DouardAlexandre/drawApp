@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const passport = require('passport');
 const User = require('../models/User');
 
-/**
+/*
  * GET /login
  * Login page.
  */
@@ -17,7 +17,7 @@ exports.getLogin = (req, res) => {
   });
 };
 
-/**
+/*
  * POST /login
  * Sign in using email and password.
  */
@@ -47,7 +47,7 @@ exports.postLogin = (req, res, next) => {
   })(req, res, next);
 };
 
-/**
+/*
  * GET /logout
  * Log out.
  */
@@ -56,7 +56,7 @@ exports.logout = (req, res) => {
   res.redirect('/');
 };
 
-/**
+/*
  * GET /signup
  * Signup page.
  */
@@ -69,7 +69,7 @@ exports.getSignup = (req, res) => {
   });
 };
 
-/**
+/*
  * POST /signup
  * Create a new local account.
  */
@@ -109,7 +109,7 @@ exports.postSignup = (req, res, next) => {
   });
 };
 
-/**
+/*
  * GET /account
  * Profile page.
  */
@@ -119,7 +119,7 @@ exports.getAccount = (req, res) => {
   });
 };
 
-/**
+/*
  * POST /account/profile
  * Update profile information.
  */
@@ -155,7 +155,7 @@ exports.postUpdateProfile = (req, res, next) => {
   });
 };
 
-/**
+/*
  * POST /account/password
  * Update current password.
  */
@@ -181,7 +181,7 @@ exports.postUpdatePassword = (req, res, next) => {
   });
 };
 
-/**
+/*
  * POST /account/delete
  * Delete user account.
  */
@@ -194,7 +194,7 @@ exports.postDeleteAccount = (req, res, next) => {
   });
 };
 
-/**
+/*
  * GET /account/unlink/:provider
  * Unlink OAuth provider.
  */
@@ -212,7 +212,7 @@ exports.getOauthUnlink = (req, res, next) => {
   });
 };
 
-/**
+/*
  * GET /reset/:token
  * Reset Password page.
  */
@@ -235,7 +235,7 @@ exports.getReset = (req, res, next) => {
     });
 };
 
-/**
+/*
  * POST /reset/:token
  * Process the reset password request.
  */
@@ -297,7 +297,7 @@ exports.postReset = (req, res, next) => {
     .catch(err => next(err));
 };
 
-/**
+/*
  * GET /forgot
  * Forgot Password page.
  */
@@ -310,7 +310,7 @@ exports.getForgot = (req, res) => {
   });
 };
 
-/**
+/*
  * POST /forgot
  * Create a random token, then the send user an email with a reset link.
  */
@@ -353,6 +353,13 @@ exports.postForgot = (req, res, next) => {
         pass: process.env.SENDGRID_PASSWORD
       }
     });
+
+    
+/*    ----------------------------------------*/
+
+
+
+
     const mailOptions = {
       to: user.email,
       from: 'hackathon@starter.com',

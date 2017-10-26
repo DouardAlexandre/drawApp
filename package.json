@@ -1,15 +1,14 @@
 {
-  "name": "hackathon-starter",
-  "version": "4.3.0",
-  "description": "A boilerplate for Node.js web applications",
+  "name": "drawApp",
+  "version": "1.0.0",
+  "description": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/hackathon-starter.git"
+    "url": "https://github.com/DouardAlexandre/drawApp.git"
   },
-  "author": "Sahat Yalkabov",
-  "license": "MIT",
+  "author": "Alexandre Douard",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "test": "mocha --reporter spec",
     "postinstall": "npm rebuild node-sass",
     "eslint": "eslint **/*.js"
